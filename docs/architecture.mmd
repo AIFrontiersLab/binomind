@@ -1,0 +1,7 @@
+flowchart TD
+    A[User: Binary Path] --> B[FastAPI Endpoint]
+    B --> C[BinaryDisassembler]
+    C -->|Mock Assembly| D[ContextManager]
+    D -->|Chunks| E[LLM Inference Engine]
+    E -->|Patterns| F[Output Formatter]
+    F --> G[Pseudocode & Mappings]

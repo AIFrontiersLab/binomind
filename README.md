@@ -37,3 +37,22 @@ python -c "from main import demo; demo()"
 ```bash
 pytest -q
 ```
+
+## Architecture
+
+![Architecture](docs/architecture.png)
+
+<details>
+<summary>Mermaid source</summary>
+
+```mermaid
+flowchart TD
+    A[User: Binary Path] --> B[FastAPI Endpoint]
+    B --> C[BinaryDisassembler]
+    C -->|Mock Assembly| D[ContextManager]
+    D -->|Chunks| E[LLM Inference Engine]
+    E -->|Patterns| F[Output Formatter]
+    F --> G[Pseudocode & Mappings]
+```
+
+</details>
